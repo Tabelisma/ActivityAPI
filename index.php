@@ -16,15 +16,11 @@
         }
 
         $db = new DB();
-        //Connect Database
-        $connect = $db->connect();
-        //Execute Query
-        $result = mysqli_query($connect, $sql);
+        $connect = $db->connect(); //Connect Database
+        $result = mysqli_query($connect, $sql); //Execute Query
     
-        //Check number of row
-        if (mysqli_num_rows($result) > 0) {
-            // Fetch each data (mysqli_fetch_all get assosiative and value array)
-            while($row = mysqli_fetch_all($result, MYSQLI_ASSOC)) {
+        if (mysqli_num_rows($result) > 0) { //Check number of row
+            while($row = mysqli_fetch_all($result, MYSQLI_ASSOC)) { // Fetch each data
                 $data = $row;
             }
         } 
@@ -43,9 +39,8 @@
 
         $db = new DB();
         $sql = "INSERT INTO tblemp (first_name, mid_add, last_name, contact_num, email_add, address) VALUES (?,?,?,?,?,?)";
-    
-        //Connect Database
-        $connect = $db->connect();
+         
+        $connect = $db->connect();//Connect Database
         //Execute Query
         if($stmt = mysqli_prepare($connect, $sql)){
             mysqli_stmt_bind_param($stmt, "ssssss", $first_name, $mid_add, $last_name, $contact_num, $email_add, $address);
