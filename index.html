@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Customer</title>
+    <title>DCT Employee</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css" integrity="sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/fontawesome.min.css" integrity="sha512-SgaqKKxJDQ/tAUAAXzvxZz33rmn7leYDYfBP+YoMRSENhf3zJyx3SBASt/OfeQwBHA1nxMis7mM3EV/oYT6Fdw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
@@ -87,7 +87,7 @@
     <script>
       $(document).ready(function() {
           $.ajax({
-              url: "http://localhost/ActivityAPI/",
+              url: "http://localhost/AcivityAPI-PHP/",
               method: "GET", 
               success: function(response) {
                   txt = "";
@@ -129,7 +129,7 @@
             }
             $(document).ready(function() {
                   $.ajax({
-                      url: "http://localhost/ActivityAPI/",
+                      url: "http://localhost/AcivityAPI-PHP/",
                       method: "POST",
                       data: JSON.stringify(data),
                       success: function(response) {
@@ -145,7 +145,7 @@
         
       function select_record(id) {
             $.ajax({
-                url: `http://localhost/ActivityAPI/index.php?id=${id}`,
+                url: `http://localhost/AcivityAPI-PHP/index.php?id=${id}`,
                 method: "GET",
                 success: function(response) {
                     var txt = "";
@@ -185,7 +185,7 @@
                 address : document.getElementById("address").value,
             }
           $.ajax({
-              url: `http://localhost/ActivityAPI/index.php?id=${empid}`,
+              url: `http://localhost/AcivityAPI-PHP/index.php?id=${empid}`,
               method: "PUT",
               data: JSON.stringify(data),
               success: function(response) {
@@ -202,7 +202,7 @@
             var empid = document.getElementById("empid").value
             $(document).ready(function() {
                   $.ajax({
-                      url: `http://localhost/ActivityAPI/index.php?id=${empid}`,
+                      url: `http://localhost/AcivityAPI-PHP/index.php?id=${empid}`,
                       method: "DELETE",
                       success: function(response) {
                             document.location = '/';

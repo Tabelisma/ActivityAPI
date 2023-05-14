@@ -81,7 +81,7 @@
             $contact_num =  $value['contact_num'];    
             $email_add =  $value['email_add'];    
             $address = $value['address']; 
-            $sql = "UPDATE tblemp SET first_name = '$first_name', mid_add = '$mid_add', last_name = '$last_name', address = '$address' WHERE id = ". $_GET['id'];
+            $sql = "UPDATE tblemp SET first_name = '$first_name', mid_add = '$mid_add', last_name = '$last_name', contact_num = '$contact_num', email_add = '$email_add', address = '$address' WHERE id = ". $_GET['id'];
         }
         else{
             die("Error ID");
