@@ -16,7 +16,6 @@
             }
             return $con;
         }
-
         public function closeConnection($con){
             mysqli_close($con);
         }
